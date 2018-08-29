@@ -39,7 +39,7 @@ public class Position {
 	}
 
 	public boolean isAvailable() {
-		return available;
+		return available; 
 	}
 
 	public void setAvailability(boolean available) {
@@ -66,10 +66,17 @@ public class Position {
 	 * @return 
 	 */
 	public double getYearlySalary() {
+		int hours;
+	if(jobType == true){
+		hours = 40;
 		
-		//Add Code Here [You have to use If/Else to get graded]
+	}
+	else{
+		hours = 20;
+	}
+	double totalYearly = hSalary*hours*4.5*12;
 		
-		return 0; //Temporal Return
+		return totalYearly; //Temporal Return
 		
 	}
 }
