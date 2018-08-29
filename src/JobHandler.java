@@ -1,5 +1,5 @@
 public class JobHandler {
-	
+
 	/**
 	 * A method that returns the rank of an employee.
 	 * A rank is determined by the user's current salary
@@ -24,33 +24,33 @@ public class JobHandler {
 		int currentRank = 0;
 		int warningDeRank = 0;
 		int totalDecrease;
-		
+
 		if(yearlySalary < 10000){
 			currentRank = 20;
-			} else if (yearlySalary >= 10000 && yearlySalary < 50000){
-				currentRank = 40;
-			} else if (yearlySalary >= 50000 && yearlySalary < 100000){
-				currentRank= 60;
-			} else {
-				currentRank = 80;
-			}
-		
+		} else if (yearlySalary >= 10000 && yearlySalary < 50000){
+			currentRank = 40;
+		} else if (yearlySalary >= 50000 && yearlySalary < 100000){
+			currentRank= 60;
+		} else {
+			currentRank = 80;
+		}
+
 		switch (warningTotals){
 		case 0: warningDeRank = 0;
-			break;
+		break;
 		case 1: warningDeRank = 5;
-			break;
+		break;
 		case 2: warningDeRank = 10;
-			break;
+		break;
 		case 3: warningDeRank = 15;
-			break;
+		break;
 		default: warningDeRank = warningTotals * 6;
 		}
 		//Add Code Here [You have to use Switch and If/Else to get graded] 
-		
+
 		return currentRank - warningDeRank;
 	}
-	
+
 	/**
 	 * A method that helps determine if an employee qualifies for a job.
 	 * To determine if the employee qualifies we need to meet the following requirements:
@@ -70,11 +70,30 @@ public class JobHandler {
 	 */
 	public static boolean promotionQualify(boolean availability, boolean jobType, int jobRank, int eRank, int seniority) {
 		boolean qualify = false;
-		if(!availability){ return qualify;}
+		if(!availability){ return qualify ;}
 		if(eRank <= 0) { return qualify;}
+
+		switch (seniority){
+		case 1:  
+			eRank += 5;
+			break;
+		case 2:  
+			eRank += 10;
+			break;
+		case 3:  
+			eRank += 20;
+			break;
+		default:
+			break;
+			
+		}
+
+		if (eRank >= jobRank || !jobType){
+			qualify = true;
+		}
 		
-		//Add Code Here [You have to use Switch and If/Else to get graded]
-		
+	
+
 		return qualify; 
 	}
 }
