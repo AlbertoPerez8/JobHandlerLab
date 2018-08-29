@@ -1,4 +1,3 @@
-
 public class Employee {
 
 	public String eFullName; //Employee Full Name
@@ -7,69 +6,70 @@ public class Employee {
 	public int yearService; //Years working 
 	public boolean workStatus; //Permanent [True] Temporary [False]
 	public int warnings; //Number of warnings given
-	
+
 	public Employee(String fullName, double hSalary, int hWeekly, int years, boolean status, int warnings) {
 		eFullName = fullName;
 		eHSalary = hSalary; 
 		hourWeekly = hWeekly; 
-		yearService = years; 
+		yearService = years; 		//Add Code Here [You have to use If/Else to get graded]
+
 		workStatus = status;
 		this.warnings = warnings;
 	}
-	
+
 	public String getFullName() {
 		return eFullName;
 	}
-	
+
 	public double getHourlySalary() {
 		return eHSalary;
 	}
-	
+
 	public int getHoursPerWeek() {
 		return hourWeekly;
 	}
-	
+
 	public int getYearsOfService() {
 		return yearService;
 	}
-	
+
 	public boolean getStatus() {
 		return workStatus;
 	}
-	
+
 	public int getWarnings() {
 		return warnings;
 	}
-	
+
 	public double getYearlySalary() {
 		return eHSalary*hourWeekly*4.5*12;
 	}
-	
+
 	public void setFullName(String fullName) {
 		eFullName = fullName;
 	}
-	
+
 	public void setHourlySalary(double hSalary) {
 		eHSalary = hSalary;
 	}
-	
+
 	public void setHoursPerWeek(int hours) {
 		hourWeekly = hours;
 	}
-	
+
 	public void setYearsOfService(int years) {
 		yearService = years;
 	}
-	
+
 	public void setStatus(boolean status) {
 		workStatus = status;
 	}
-	
+
 	public void setWarnings(int warnings) {
 		this.warnings = warnings;
 		//Comment
 	}
-	
+
 	/**
 	 * A method that returns the level of seniority of an employee. (Levels 0 to 3)
 	 * 1. The level of seniority is determined by years of service:
@@ -80,37 +80,45 @@ public class Employee {
 	 * @return 
 	 */
 	public int seniorityLevel() {
-		
-		//Add Code Here [You have to use If/Else to get graded]
-		
+
+		if(yearService >= 10){
+			return 3;
+		}
+		if (yearService >= 5 && yearService < 10){
+			return 2;
+		}
+		if(yearService >= 1 && yearService < 5){
+			return 1;
+		}
+
 		return 0;// Temporal Return
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
